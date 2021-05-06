@@ -1,0 +1,96 @@
+html {
+    font-family: "Open Sans", sans-serif;
+    /* font-size: x-large; */
+    font-size: 16pt;
+}
+
+body {
+    margin: 0;
+}
+
+nav {
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    /* class 5 changes justify-content to space-evenly */
+    padding: 0.25em;
+    /* class 2 shows nav first with padding then without */
+    /* class 5 adds padding back in */
+    font-size: larger;
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* class 5 adds color: white; to nav selector */
+}
+
+a {
+    color: #f0f0f0;
+    /* second time color: white; - Class 2 */
+    /* class 5 changes color to inherit */
+    text-decoration: none;
+}
+
+article {
+    padding-top: 4rem;
+    /* right after added in class 4 changed to padding-top: 10vh; */
+    /* class 5 changes padding-top back to 4rem */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* class 5 changes background-position to center center; */
+    background-attachment: fixed;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    box-sizing: border-box;
+    padding-left: 20vw;
+    padding-right: 20vw;
+}
+
+#home {
+    background-image: url("../images/background.jpg");
+}
+
+.logo {
+    width: 9ch;
+}
+
+.title, .logo {
+    font-family: "Indie Flower";
+    font-size: 3em;
+}
+
+.tagline {
+    font-style: italic;
+    font-size: 1.5em;
+}
+
+.photobox {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1em;
+    /* class 5 takes off flex-direction and margin-top */
+}
+
+.photobox img {
+    width: 22ch;
+}
+
+.photobox > :last-child {
+    text-align: left;
+}
+
+.photobox figure {
+    font-size: .6em;
+    margin-left: 0;
+    margin-top: .3rem;
+    margin-right: 1em;
+    margin-bottom: 2em;
+}
+
+figure {
+    margin: 0;
+    margin-right: 1em;
+}
