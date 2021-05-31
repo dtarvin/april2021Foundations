@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script>
+        // console.log("beginning action");
+        // var total = 0;
+        // console.log("after declaring, total is now " + total);
+        // total = total + 2;
+        // console.log("after adding 2, total is now " + total);
+        // total += 3;1
+        // console.log("after adding 3, total is now " + total);
+        // total++;
+        // console.log("after incrementing, Total is " + total);
+
+        // var firstName = "Kent";
+        // var numOfAccounts = 2;
+        // var balance = 12.34;
+
+        // if (balance < 20 && numOfAccounts > 1) {
+        //     console.log("Transfer Funds!");
+        // } else if (balance > 20 || firstName == "Kent") {
+        //     console.log("Sufficient funds");
+        // } else {
+        //     console.log("Insufficient funds");
+        // }
+
+        // var cars = ["Volvo", "Saab", "Mercedes", "Audi", "Ford"];
+        
+        // for (var i = 0; i < cars.length; i++) {
+        //     console.log("i=" + i);
+        //     console.log("Car number " + (i + 1) + " is a(n) " + cars[i]);
+        // }
+
+        // var i = 11;
+        // while (i <= 10) {
+        //     console.log("i = " +i);
+        //     i++;
+        // }
+
+        // var k = 11;
+        // do {
+        //     console.log("k = " + k);
+        //     k++;
+        // } while (k <= 10);
+
+        // function add3Plus5() {
+        //     console.log(3+5);
+        // }
+        // function addTwoNumbers(num1, num2) {
+        //     console.log(num1 + num2);
+        // }
+
+        // add3Plus5();
+        // addTwoNumbers(8, 12);
+
+        var name = "Ted";
+
+        function changeName() {
+            name = "Bill";
+            console.log("inside function, name is " + name);
+            var age = 42;
+            console.log("inside function, age is " + age);
+            return age;
+        }
+        console.log("outside function, before call, name is " + name);
+        var age = changeName();
+        console.log("after function call, age is " + age);
+    </script>
+</body>
+</html>
