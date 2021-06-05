@@ -1,41 +1,38 @@
-// $(function() {
+function simpleSlider(element = "#simple-slider", auto = false, pause) {
 
-    function simpleSlider(element = "#simple-slider", auto = false, pause) {
-   
-        console.log("simpleSlider entering");
-        // Get parent element
-        var $this = $(element);
-        console.log('simpleSlider $this = ' + $this);
-        // Slides container
-        var slidesCont = $this.children('.slides-container');
+    console.log("simpleSlider entering");
 
-        // Get all slides
-        var slides = slidesCont.children('.slide');
+    // Get parent element
+    var $this = $(element);
 
-        // Get pager div
-        var pager = $this.children('.pager');
+    // Slides container
+    var slidesCont = $this.children('.slides-container');
+    // Get all slides
+    var slides = slidesCont.children('.slide');
 
-        // Get previous / next links
-        var arrowsCont = $this.children('.arrows');
-        var prevSlide = arrowsCont.children('.prev');
-        var nextSlide = arrowsCont.children('.next');
+    // Get pager div
+    var pager = $this.children('.pager');
 
-        // Total slides count
-        var slidesCount = slides.length;
+    // Get previous / next links
+    var arrowsCont = $this.children('.arrows');
+    var prevSlide = arrowsCont.children('.prev');
+    var nextSlide = arrowsCont.children('.next');
 
-        // Set currentSlide to first child
-        var currentSlide = slides.first();
-        var currentSlideIndex = 1;
+    // Total slides count
+    var slidesCount = slides.length;
 
-        var autoPlay = null;
+    // Set currentSlide to first child
+    var currentSlide = slides.first();
+    var currentSlideIndex = 1;
 
-        // Hide all slides except first and add active class to first
-        slides.not(':first').css('display', 'none');
-        currentSlide.addClass('active');
-    }
+    var autoPlay = null;
 
+    // Hide all slides except first and add active class to first
+    slides.not(':first').css('display', 'none');
+    currentSlide.addClass('active');
+
+    // function responsible for fading to next slide
     function fadeNext() {
-        console.log('fadeNext entering');
         currentSlide.removeClass('active').fadeOut(700);
 
         if (currentSlideIndex == slidesCount) {
@@ -75,26 +72,26 @@
         if(auto == true) {
             autoPlay = setInterval(function() { fadeNext() }, pause);
         }
-
-        // Detect if user clicked on arrow for next slide and face next slide if it did
-        $(nextSlide).click(function(e) {
-            e.preventDefault();
-            fadeNext();
-            AutoPlay();
-        });
-
-        // Detect if user clicked on arrow for previous slide...
-        $(prevSlide).click(function(e) {
-            e.preventDefault();
-            fadePrev();
-            AutoPlay();
-        });
-
-        // Start autoplay if auto is set to true
-        AutoPlay();
     }
 
-    $(function() {
-        simpleSlider('#slider', true, 8000);
+    // Detect if user clicked on arrow for next slide and face next slide if it did
+    $(nextSlide).click(function(e) {
+        e.preventDefault();
+        fadeNext();
+        AutoPlay();
     });
-// });
+
+    // Detect if user clicked on arrow for previous slide...
+    $(prevSlide).click(function(e) {
+        e.preventDefault();
+        fadePrev();
+        AutoPlay();
+    });
+
+    // Start autoplay if auto is set to true
+    AutoPlay();
+}
+
+$(function() {
+    simpleSlider('#slider', true, 8000);
+});
